@@ -1,0 +1,185 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#5b3a3942"
+    style="@style/AppTheme"
+    android:touchscreenBlocksFocus="false"
+    android:transitionGroup="false"
+    android:clickable="true">
+
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar1"
+        android:progress="15"
+        android:max="30"
+        android:layout_above="@+id/splitSeek1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/billTextView"
+        android:layout_toEndOf="@+id/billTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bill :"
+        android:id="@+id/billTextView"
+        android:layout_marginTop="30dp"
+        android:phoneNumber="false"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:layout_below="@+id/title"
+        android:layout_toLeftOf="@+id/bill_input"
+        android:layout_toStartOf="@+id/bill_input"
+        android:textColor="#ff464646" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip Calculator"
+        android:id="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/abc_text_size_display_2_material"
+        android:textColor="#ff2c2d2f" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tip"
+        android:theme="@style/Base.TextAppearance.AppCompat.Large.Inverse"
+        android:text=""
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:layout_below="@+id/billTextView"
+        android:layout_marginTop="27dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#63000000"
+        android:layout_toStartOf="@+id/tip_total"
+        android:layout_alignEnd="@+id/switch1"
+        android:layout_toLeftOf="@+id/tip_total"
+        android:layout_alignRight="@+id/switch1"
+
+        />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/switcher"
+        android:id="@+id/switch1"
+        android:textOn="YES"
+        android:textOff="NO"
+        android:layout_above="@+id/seekBar1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
+        android:onClick="onToggleClicked"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="5"
+        android:includeFontPadding="false"
+        android:id="@+id/bill_input"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:gravity="center_horizontal|bottom"
+        android:layout_alignRight="@+id/title"
+        android:layout_alignEnd="@+id/title"
+        android:layout_above="@+id/tip"
+        android:imeOptions="actionSend"
+        android:textColor="#ff000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tip_total"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:layout_alignTop="@+id/tip"
+        android:layout_alignBottom="@+id/tip"
+        android:layout_toRightOf="@+id/switch1"
+        android:layout_toEndOf="@+id/switch1"
+        android:layout_alignRight="@+id/seekBar1"
+        android:layout_alignEnd="@+id/seekBar1"
+        android:textColor="#ff000000"
+        android:gravity="start" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/total_id"
+        android:layout_alignRight="@+id/tip_total"
+        android:layout_alignEnd="@+id/tip_total"
+        android:layout_above="@+id/switch1"
+        android:textSize="@dimen/abc_text_size_display_3_material"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff000000"
+        android:text="0" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_alignTop="@+id/switch1"
+        android:layout_toLeftOf="@+id/switch1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/space"
+        android:layout_alignBottom="@+id/switch1" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_alignTop="@+id/switch1"
+        android:layout_toRightOf="@+id/switch1"
+        android:layout_alignRight="@+id/tip_total"
+        android:layout_alignEnd="@+id/tip_total"
+        android:layout_alignBottom="@+id/switch1" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/splitSeek1"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/billTextView"
+        android:layout_toEndOf="@+id/billTextView"
+        android:layout_alignRight="@+id/seekBar1"
+        android:layout_alignEnd="@+id/seekBar1"
+        android:max="14"
+        android:progress = "0"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tip %"
+        android:id="@+id/tipSliderView"
+        android:layout_alignBottom="@+id/seekBar1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch1"
+        android:layout_alignRight="@+id/splitView"
+        android:layout_alignEnd="@+id/splitView"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Checks"
+        android:id="@+id/splitView"
+        android:layout_below="@+id/tipSliderView"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/billTextView"
+        android:layout_alignEnd="@+id/billTextView" />
+
+</RelativeLayout>
